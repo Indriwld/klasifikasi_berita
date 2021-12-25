@@ -45,3 +45,12 @@ Route::group(['prefix' => 'pengguna', 'middleware' => ['auth', 'role:pengguna']]
         return 'halaman profile pengguna';
     });
 });
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+    Route::get('buku', function () {
+        return view('buku.index');
+    })->middleware(['role:admin|pengguna']);
+
+    Route::get('pengarang', function () {
+        return view('pengarang.index');
+    })->middleware(['role:admin']);
+});
