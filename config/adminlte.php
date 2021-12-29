@@ -227,43 +227,48 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type' => 'navbar-search',
-            'text' => 'search',
-            'topnav_right' => true,
-        ],
-
-        // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
-        ],
-        [
-            'text' => 'Pages',
-            'url' => 'admin/pages',
-            'icon' => 'fas fa-fw fa-file',
+            'text' => 'HOME',
+            'url' => 'home',
+            'icon' => 'fas fa-fw fa-home',
             'label' => 4,
             'label_color' => 'success',
         ],
-
         [
-            'text' => 'buku',
-            'url' => 'admin/buku',
+            'text' => 'BERITA',
+            'url' => 'admin/berita',
             'icon' => 'far fa-fw fa-file',
+            'label' => 4,
+            'label_color' => 'success',
+        ],
+        ['header' => 'Kategori berita'],
+        [
+            'text' => 'News',
+            'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Pengarang',
-            'url' => 'admin/pengarang',
-            'icon' => 'far fa-fw fa-file',
+            'text' => 'Olahraga',
+            'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text' => 'Menu lainya',
-            'url' => '#',
-            'icon' => 'far fa-fw fa-file',
+            'text' => 'Tips dan trik',
+            'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'Edukasi',
+            'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'ekonomi',
+            'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'Politik',
+            'icon' => 'fas fa-fw fa-browser',
         ],
 
     ],
