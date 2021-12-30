@@ -77,7 +77,7 @@
                             <div class="panel-heading">
                                 Tambah Data
                             </div>
-                            <form Action="{{ route('kategori.store')}}" method="post" enctype="multipart/form-data">
+                            <form Action="{{ route('berita.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
 
                                  <div class="panel-body">
@@ -86,19 +86,28 @@
                                  </div>
                                  <div class="panel-body">
                                     <label>Isi</label>
-                                    <input type="text" class="form-control" name="isi">
+                                    <textarea input type="text" class="form-control" name="isi"></textarea>
                                 </div>
+                                 <div class="panel-body">
+                                      <label> kategori</label>
+                                      <select name="id_kategori" class="form-control">
+                                         @foreach($kategori as $data)
+                                         <option value="{{$data->id}}">{{$data->nama_kategori}}</option>
+                                         @endforeach
+                                      </select>
+                                  </div>
                                   <div class="panel-body">
                                       <label>foto</label>
-                                      <input type="text" class="form-control" name="foto">
-                                  </div>
+                                         <input type="text" class="form-control" name="foto">
+
+                                      </div>
                                    <div class="panel-body">
                                        <label>nama penulis</label>
                                        <input type="text" class="form-control" name="nama_penulis">
                                    </div>
                                     <div class="panel-body">
                                        <label>tanggal</label>
-                                       <input type="file" class="form-control" name="tanggal">
+                                       <input type="date" class="form-control" name="tanggal">
                                    </div>
                                 <div class="panel-body">
                                     <button type="reset" class="btn btn-warning">Reset</button>

@@ -57,7 +57,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Apotek-Ku</h1>
+                            <h1 class="page-header">data berita</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
@@ -79,7 +79,7 @@
                                                     <th>Id berita</th>
                                                     <th>judul</th>
                                                     <th>isi</th>
-                                                    <th>id kategori</th>
+                                                    <th>kategori</th>
                                                     <th>foto</th>
                                                     <th>nama penulis</th>
                                                     <th>tanggal</th>
@@ -92,15 +92,14 @@
                                                 @foreach($berita as $data)
                                                 <tr>
                                                    <td>{{ $no++ }}</td>
-                                                   <td>{{ $data->kategori->nama_kategori}}</td>
+
                                                    <td>{{ $data->judul}}</td>
                                                    <td>{{ $data->isi}}</td>
+                                                    <td>{{ $data->kategori->nama_kategori}}</td>
                                                    <td>{{ $data->foto}}</td>
                                                    <td>{{ $data->nama_penulis}}</td>
                                                    <td>{{ $data->tanggal}}</td>
 
-                                                   <td><img src="{{$data->image()}}" alt="" style="width:150px; height:150px;" alt="foto">    </td>
-                                                   <td>
 
                                                    <td>
                                                        <form action="{{route('berita.destroy',$data->id)}}" method="post">

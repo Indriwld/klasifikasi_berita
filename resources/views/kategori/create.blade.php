@@ -69,11 +69,11 @@
                                 <div class="panel-heading">
                                     Tambah Data Supplier
         </div>
-        <form Action="{{ route('supplier.store')}}" method="post">
+        <form Action="{{ route('kategori.store')}}" method="post">
             @csrf
             <div class="penel-body">
-                <label>Nama</label>
-                <input type="text" class="form-control" name="nama">
+                <label>Nama kategori</label>
+                <input type="text" class="form-control" name="nama_kategori">
             </div>
             <div class="panel-body">
                 <button type="reset" class="btn btn-warning">Reset</button>

@@ -67,6 +67,8 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     Data kategori
+                                            <a href="{{ route('kategori.create')}}" class="btn btn-primary float-rigth">Tambah</a>
+
                                   </div>
                                 <!-- /.panel-heading -->
                                 <div class="panel-body">
@@ -80,7 +82,26 @@
 
                                                 </tr>
                                             </thead>
+ <tbody>
+                                                @php  $no=1; @endphp
+                                                @foreach($kategori as $data)
+                                                <tr>
+                                                   <td>{{ $no++ }}</td>
+                                                   <td>{{ $data->nama_kategori}}</td>
 
+
+                                                   <td>
+                                                       <form action="{{route('kategori.destroy',$data->id)}}" method="post">
+                                                           @method('delete')
+                                                           @csrf
+                                                       <a href="{{ route('kategori.edit',$data->id)}}" class="btn btn-success float-rigth">Ubah</a>
+                                                <button type="sumbit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin akan menghapus ini?')">Hapus</button>
+
+                                                 </form>
+                                                   </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
                                         </table>
                                     </div>
                                     <!-- /.table-responsive -->
