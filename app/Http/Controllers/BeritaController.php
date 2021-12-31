@@ -49,6 +49,13 @@ class BeritaController extends Controller
         $berita->foto = $request->foto;
         $berita->nama_penulis = $request->nama_penulis;
         $berita->tanggal = $request->tanggal;
+        // upload image / foto
+        if ($request->hasFile('foto')) {
+            $image = $request->file('foto');
+            $foto = rand(1000, 9999) . $image->getClientOriginalName();
+            $image->move('image/berita/', $foto);
+            $berita->foto = $foto;
+        }
 
         $berita->save();
         return redirect()->route('berita.index');
@@ -72,8 +79,11 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Berita $berita)
+    public function edit($id)
     {
+        $berita = Berita::findOrFail($id);
+        $kategori = Kategori::all();
+        return view('berita.edit', compact('berita', 'kategori'));
 
     }
 
@@ -94,6 +104,14 @@ class BeritaController extends Controller
         $berita->foto = $request->foto;
         $berita->nama_penulis = $request->nama_penulis;
         $berita->tanggal = $request->tanggal;
+        // upload image / foto
+        if ($request->hasFile('foto')) {
+            $berita->deleteImage();
+            $image = $request->file('foto');
+            $foto = rand(1000, 9999) . $image->getClientOriginalName();
+            $image->move('image/berita/', $foto);
+            $berita->foto = $foto;
+        }
 
         $berita->save();
         return redirect()->route('berita.index');

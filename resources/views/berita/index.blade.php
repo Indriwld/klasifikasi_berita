@@ -76,18 +76,18 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th>Id berita</th>
-                                                    <th>judul</th>
-                                                    <th>isi</th>
-                                                    <th>kategori</th>
-                                                    <th>foto</th>
-                                                    <th>nama penulis</th>
-                                                    <th>tanggal</th>
-                                                      <th>aksi</th>
+                                                    <th>Id</th>
+                                                    <th>Judul</th>
+                                                    <th>Isi</th>
+                                                    <th>Kategori</th>
+                                                    <th>Foto</th>
+                                                    <th>Penulis</th>
+                                                    <th>Tanggal</th>
+                                                      <th>Aksi</th>
 
                                                 </tr>
                                             </thead>
-     <tbody>
+                                           <tbody>
                                                 @php  $no=1; @endphp
                                                 @foreach($berita as $data)
                                                 <tr>
@@ -95,12 +95,10 @@
 
                                                    <td>{{ $data->judul}}</td>
                                                    <td>{{ $data->isi}}</td>
-                                                    <td>{{ $data->kategori->nama_kategori}}</td>
-                                                   <td>{{ $data->foto}}</td>
+                                                   <td>{{ $data->kategori->nama_kategori}}</td>
+                                                    <td><img src="{{$data->image()}}" alt="" style="width:150px; height:150px;" alt="foto"></td>
                                                    <td>{{ $data->nama_penulis}}</td>
                                                    <td>{{ $data->tanggal}}</td>
-
-
                                                    <td>
                                                        <form action="{{route('berita.destroy',$data->id)}}" method="post">
                                                            @method('delete')

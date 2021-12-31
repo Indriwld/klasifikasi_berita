@@ -1,4 +1,4 @@
-[08.20, 27/11/2021] Indri: <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -53,13 +53,7 @@
             {{-- SIDEBAR --}}
             @include('layouts.bagian.sidebar')
             {{-- /SIDEBAR --}}
-
-
-
-
-
-
-        </nav>
+         </nav>
 
         <div id="page-wrapper">
             <div class="container-fluid">
@@ -98,11 +92,11 @@
                                   </div>
                                   <div class="panel-body">
                                       <label>foto</label>
-                                         <input type="text" class="form-control" name="foto">
+                                         <input type="file" class="form-control" name="foto">
 
                                       </div>
                                    <div class="panel-body">
-                                       <label>nama penulis</label>
+                                       <label>Penulis</label>
                                        <input type="text" class="form-control" name="nama_penulis">
                                    </div>
                                     <div class="panel-body">

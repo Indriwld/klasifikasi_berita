@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <meta name="author" content="">
+        <meta name="kategori" content="">
 
         <title>Startmin - Bootstrap Admin Theme</title>
 
@@ -57,61 +57,33 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">kategori</h1>
+                            <h1 class="page-header">Author</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
                     <!-- /.row -->
 <!-- TABLE -->
- <div class="col-lg-12">
+  <div class="row">
+            <div class="col-lg-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    Data kategori
-                                            <a href="{{ route('kategori.create')}}" class="btn btn-primary float-rigth">Tambah</a>
+                                    Edit Data Author
+        </div>
+        <form Action="{{ route('kategori.update',$kategori->id)}}" method="post">
+            @csrf
+            @method('put')
+            <div class="penel-body">
+                <label>Nama Kategori</label>
+                <input type="text" class="form-control" name="nama_kategori" value="{{$kategori->nama_kategori}}">
+            </div>
+            <div class="panel-body">
+                <button type="reset" class="btn btn-warning">Reset</button>
+                  <button type="submit" class="btn btn-primary">Ubah</button>
+            </div>
+        </form>
 
-                                  </div>
-                                <!-- /.panel-heading -->
-                                <div class="panel-body">
-                                    <div class="table-responsive table-bordered">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Kategori</th>
-                                                    <th>Aksi</th>
-
-                                                </tr>
-                                            </thead>
- <tbody>
-                                                @php  $no=1; @endphp
-                                                @foreach($kategori as $data)
-                                                <tr>
-                                                   <td>{{ $no++ }}</td>
-                                                   <td>{{ $data->nama_kategori}}</td>
-
-
-                                                   <td>
-                                                       <form action="{{route('kategori.destroy',$data->id)}}" method="post">
-                                                           @method('delete')
-                                                           @csrf
-                                                       <a href="{{ route('kategori.edit',$data->id)}}" class="btn btn-success float-rigth">Ubah</a>
-                                                            <a href="{{ route('kategori.show',$data->id)}}" class="btn btn-warning float-rigth">Tampil</a>
-
-                                                <button type="sumbit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin akan menghapus ini?')">Hapus</button>
-
-                                                 </form>
-                                                   </td>
-                                                </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!-- /.table-responsive -->
-                                </div>
-                                <!-- /.panel-body -->
-                            </div>
-                            <!-- /.panel -->
-                        </div>
+    </div>
+ <!-- TABEL -->
                     <!-- /.row -->
                 </div>
                 <!-- /.container-fluid -->
