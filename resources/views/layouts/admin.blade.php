@@ -46,8 +46,7 @@
             {{-- Navbar --}}
             @include('layouts.bagian.navbar')
             {{-- /Navbar --}}
-
-            <div class="navbar-default sidebar" role="navigation">
+     <div class="navbar-default sidebar" role="navigation">
 
             {{-- Sidebar --}}
             @include('layouts.bagian.sidebar')
@@ -58,7 +57,14 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Dashboard</h1>
+                        <h1 class="page-header"><div id="content">
+    <header class="masthead">
+        <center><h1>SELAMAT DATANG</h1>
+        <h1>DISITUS WEBSITE BERITA SMK ASSLAAM BANDUNG</h1><br>
+    </center>
+    </header>
+</div>
+       </h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>

@@ -83,7 +83,7 @@
                                                     <th>Foto</th>
                                                     <th>Penulis</th>
                                                     <th>Tanggal</th>
-                                                      <th>Aksi</th>
+                                                    <th>Aksi</th>
 
                                                 </tr>
                                             </thead>
@@ -96,7 +96,7 @@
                                                    <td>{{ $data->judul}}</td>
                                                    <td>{{ $data->isi}}</td>
                                                    <td>{{ $data->kategori->nama_kategori}}</td>
-                                                    <td><img src="{{$data->image()}}" alt="" style="width:150px; height:150px;" alt="foto"></td>
+                                                   <td><img src="{{$data->image()}}" alt="" style="width:150px; height:150px;" alt="foto"></td>
                                                    <td>{{ $data->nama_penulis}}</td>
                                                    <td>{{ $data->tanggal}}</td>
                                                    <td>

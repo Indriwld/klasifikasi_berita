@@ -56,7 +56,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">obat</h1>
+                            <h1 class="page-header">Ubah Berita</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
@@ -74,11 +74,12 @@
 
                                    <div class="panel-body">
                             <label>judul</label>
-                             <select name="judul" class="form-control">
-                               @foreach($berita as $data)
+                              <input type="text" class="form-control" name="judul" value="{{$berita->judul}}">
+
+                               <!-- @foreach($kategori as $data)
                                <option value="{{$data->id}}">{{$data->judul}}</option>
-                               @endforeach
-                            </select>
+                               @endforeach -->
+
         </div>
                                         <div class="panel-body">
                                                  <label>Isi</label>

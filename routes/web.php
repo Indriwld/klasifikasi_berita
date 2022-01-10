@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,8 @@ Auth::routes(
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('kategori', KategoriController::class);
 Route::resource('berita', BeritaController::class);
+
+Route::resource('/', FrontendController::class);
 
 // //hanya untuk role admin
 // Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {

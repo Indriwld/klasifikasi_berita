@@ -96,6 +96,9 @@ class BeritaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'foto' => 'image|mimes:jpg,png,jpeg',
+        ]);
 
         $berita = Berita::findOrFail($id);
         $berita->judul = $request->judul;
