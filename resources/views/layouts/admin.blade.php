@@ -59,9 +59,10 @@
                     <div class="col-lg-12">
                         <h1 class="page-header"><div id="content">
     <header class="masthead">
-        <center><h1>SELAMAT DATANG</h1>
-        <h1>DISITUS WEBSITE BERITA SMK ASSLAAM BANDUNG</h1><br>
-    </center>
+        <center><h2>SELAMAT DATANG</h2>
+        <h2>DISITUS WEBSITE BERITA SMK ASSLAAM BANDUNG</h2><br>
+       <h2> <img src="{{asset('backend/download.png')}}" alt="..." /></center>
+  </h2>  </center>
     </header>
 </div>
        </h1>

@@ -9,7 +9,6 @@ class FrontendController extends Controller
     public function index()
     {
         $berita = Berita::all();
-        return view('berita.index', compact('berita'));
-
+        return view('layouts.frontend', compact('berita'));
     }
 }

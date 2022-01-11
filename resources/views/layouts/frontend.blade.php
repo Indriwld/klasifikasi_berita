@@ -49,6 +49,60 @@
 
     <div id="wrapper">
         @include('layouts.bagian_frontend.navbar2')
+            <section class="section first-section">
+            <div class="container-fluid">
+                <div class="masonry-blog clearfix">
+                    <div class="first-slot">
+                        <div class="masonry-box post-media">
+                             <img src="{{ asset('frontend/upload/tech_01.jpg')}}" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a href="tech-category-01.html" title="">Technology</a></span>
+                                        <h4><a href="tech-single.html" title="">Say hello to real handmade office furniture! Clean & beautiful design</a></h4>
+                                        <small><a href="tech-single.html" title="">24 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Amanda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                            </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end first-side -->
+
+                    <div class="second-slot">
+                        <div class="masonry-box post-media">
+                             <img src="{{ asset('frontend/upload/tech_02.jpg')}}" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a href="tech-category-01.html" title="">Gadgets</a></span>
+                                        <h4><a href="tech-single.html" title="">Do not make mistakes when choosing web hosting</a></h4>
+                                        <small><a href="tech-single.html" title="">03 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Jessica</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                             </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end second-side -->
+
+                    <div class="last-slot">
+                        <div class="masonry-box post-media">
+                             <img src="{{ asset('frontend/upload/tech_03.jpg')}}" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a href="tech-category-01.html" title="">Technology</a></span>
+                                        <h4><a href="tech-single.html" title="">The most reliable Galaxy Note 8 images leaked</a></h4>
+                                        <small><a href="tech-single.html" title="">01 July, 2017</a></small>
+                                        <small><a href="tech-author.html" title="">by Jessica</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                             </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end second-side -->
+                </div><!-- end masonry -->
+            </div>
+        </section>
+
 
         <section class="section">
             <div class="container">
@@ -66,7 +120,7 @@
                                     <div class="col-md-4">
                                         <div class="post-media">
                                             <a href="tech-single.html" title="">
-                                                <img src="{{ asset('frontend/upload/tech_blog_01.jpg')}}" alt="" class="img-responsive">
+                                                <img src="{{$data->image()}}" alt="" style="width:350px; height:250px;" class="img-responsive">
                                                 <div class="hovereffect"></div>
                                             </a>
                                         </div><!-- end media -->
@@ -74,19 +128,21 @@
 
                                     <div class="blog-meta big-meta col-md-8">
                                         <h4><a href="tech-single.html" title="">{{ $data->judul}}</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                        <p>{{ $data->isi}}.</p>
                                         <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Design</a></small>
-                                        <small><a href="tech-single.html" title="">19 July, 2017</a></small>
-                                        <small><a href="tech-author.html" title="">by Matilda</a></small>
+                                        <small><a href="tech-single.html" title="">{{ $data->tanggal}}</a></small>
+                                        <small><a href="tech-author.html" title="">{{ $data->nama_penulis}}</a></small>
                                         <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> 4441</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
 
                                 <hr class="invis">
-                                 @endforeach
+
                                   <!-- DATA BERITA -->
 
                             </div><!-- end blog-list -->
+                            @endforeach
+                            <!-- DATA BERITA -->
                         </div><!-- end page-wrapper -->
 
                         <hr class="invis">
@@ -112,7 +168,7 @@
                             <div class="widget">
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        <img src="upload/banner_07.jpg" alt="" class="img-fluid">
+                                        <img src="{{ asset('frontend/upload/banner_07.jpg')}}" alt="" class="img-fluid">
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
                             </div><!-- end widget -->
@@ -123,7 +179,7 @@
                                     <div class="blog-box">
                                         <div class="post-media">
                                             <a href="tech-single.html" title="">
-                                                <img src="upload/tech_video_01.jpg" alt="" class="img-fluid">
+                                                <img src="{{ asset('frontend/upload/tech_video_01.jpg')}}" alt="" class="img-fluid">
                                                 <div class="hovereffect">
                                                     <span class="videohover"></span>
                                                 </div><!-- end hover -->
@@ -139,7 +195,7 @@
                                     <div class="blog-box">
                                         <div class="post-media">
                                             <a href="tech-single.html" title="">
-                                                <img src="upload/tech_video_02.jpg" alt="" class="img-fluid">
+                                                <img src="{{ asset('frontend/upload/tech_video_02.jpg')}}" alt="" class="img-fluid">
                                                 <div class="hovereffect">
                                                     <span class="videohover"></span>
                                                 </div><!-- end hover -->
@@ -155,7 +211,7 @@
                                     <div class="blog-box">
                                         <div class="post-media">
                                             <a href="tech-single.html" title="">
-                                                <img src="upload/tech_video_03.jpg" alt="" class="img-fluid">
+                                                <img src="{{ asset('frontend/upload/tech_video_03.jpg')}}" alt="" class="img-fluid">
                                                 <div class="hovereffect">
                                                     <span class="videohover"></span>
                                                 </div><!-- end hover -->
@@ -174,7 +230,7 @@
                                     <div class="list-group">
                                         <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                                <img src="upload/tech_blog_08.jpg" alt="" class="img-fluid float-left">
+                                                <img src="{{ asset('frontend/upload/tech_blog_08.jpg')}}" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1">5 Beautiful buildings you need..</h5>
                                                 <small>12 Jan, 2016</small>
                                             </div>
@@ -182,7 +238,7 @@
 
                                         <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                                <img src="upload/tech_blog_01.jpg" alt="" class="img-fluid float-left">
+                                                <img src="{{ asset('frontend/upload/tech_blog_01.jpg')}}" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1">Let's make an introduction for..</h5>
                                                 <small>11 Jan, 2016</small>
                                             </div>
@@ -190,7 +246,7 @@
 
                                         <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 last-item justify-content-between">
-                                                <img src="upload/tech_blog_03.jpg" alt="" class="img-fluid float-left">
+                                                <img src="{{ asset('frontend/upload/tech_blog_03.jpg')}}" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1">Did you see the most beautiful..</h5>
                                                 <small>07 Jan, 2016</small>
                                             </div>
@@ -205,7 +261,7 @@
                                     <div class="list-group">
                                         <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                                <img src="upload/tech_blog_02.jpg" alt="" class="img-fluid float-left">
+                                                <img src="{{ asset('frontend/upload/tech_blog_02.jpg')}}" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1">Banana-chip chocolate cake recipe..</h5>
                                                 <span class="rating">
                                                     <i class="fa fa-star"></i>
@@ -219,7 +275,7 @@
 
                                         <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                                <img src="upload/tech_blog_03.jpg" alt="" class="img-fluid float-left">
+                                                <img src="{{ asset('frontend/upload/tech_blog_03.jpg')}}" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1">10 practical ways to choose organic..</h5>
                                                 <span class="rating">
                                                     <i class="fa fa-star"></i>
@@ -233,7 +289,7 @@
 
                                         <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 last-item justify-content-between">
-                                                <img src="upload/tech_blog_07.jpg" alt="" class="img-fluid float-left">
+                                                <img src="{{ asset('frontend/upload/tech_blog_07.jpg')}}" alt="" class="img-fluid float-left">
                                                 <h5 class="mb-1">We are making homemade ravioli..</h5>
                                                 <span class="rating">
                                                     <i class="fa fa-star"></i>
@@ -285,7 +341,7 @@
                             <div class="widget">
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        <img src="upload/banner_03.jpg" alt="" class="img-fluid">
+                                        <img src="{{ asset('frontend/upload/banner_03.jpg')}}" alt="" class="img-fluid">
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
                             </div><!-- end widget -->
@@ -301,7 +357,7 @@
                     <div class="col-lg-7">
                         <div class="widget">
                             <div class="footer-text text-left">
-                                <a href="index.html"><img src="images/version/tech-footer-logo.png" alt="" class="img-fluid"></a>
+                                <a href="index.html"><img src="{{ asset('frontend/images/version/tech-footer-logo.png')}}" alt="" class="img-fluid"></a>
                                 <p>Tech Blog is a technology blog, we sharing marketing, news and gadget articles.</p>
                                 <div class="social">
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -310,6 +366,25 @@
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
                                 </div>
+
+                                <hr class="invis1">
+
+                            <div class="custombox clearfix">
+                                <h4 class="small-title">Leave a Reply</h4>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <form class="form-wrapper">
+                                            <input type="text" class="form-control" placeholder="Your name">
+                                            <input type="text" class="form-control" placeholder="Email address">
+                                            <input type="text" class="form-control" placeholder="Website">
+                                            <textarea class="form-control" placeholder="Your comment"></textarea>
+                                            <button type="submit" class="btn btn-primary">Submit Comment</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- end page-wrapper -->
+                    </div><!-- end col -->
 
                                 <hr class="invis">
 
