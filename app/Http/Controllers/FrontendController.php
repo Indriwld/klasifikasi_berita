@@ -11,4 +11,10 @@ class FrontendController extends Controller
         $berita = Berita::all();
         return view('layouts.frontend', compact('berita'));
     }
+    public function show($id)
+    {
+        $berita = Berita::findOrFail($id);
+        return view('frontend.show', compact('berita'));
+
+    }
 }
